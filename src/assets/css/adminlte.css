@@ -13053,3 +13053,7 @@ a.text-muted:hover {
 }
 
 /*# sourceMappingURL=adminlte.css.map */
+
+.content {
+  padding: 0 .5rem;
+}

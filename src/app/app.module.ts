@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MessageComponent } from './shared/message/message.component';
 import { NotificationComponent } from './shared/notification/notification.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -13,17 +14,20 @@ import { NotificationComponent } from './shared/notification/notification.compon
     AppComponent,
     SidebarComponent,
     MessageComponent,
-    NotificationComponent
+    NotificationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
+    //AppComponent,
     SidebarComponent,
     MessageComponent,
-    NotificationComponent
+    NotificationComponent,
+
+    DashboardComponent
   ]
 })
 export class AppModule { }
