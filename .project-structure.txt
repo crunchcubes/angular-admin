@@ -32,6 +32,8 @@
 
 
 
+https://username:pass@github.com/username/angular-admin.git
+
 /*Use*/
 https://blackrockdigital.github.io/startbootstrap-sb-admin/index.html
 

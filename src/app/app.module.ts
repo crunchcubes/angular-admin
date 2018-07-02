@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { routing } from "./app.routing";
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { MessageComponent } from './shared/message/message.component';
 import { NotificationComponent } from './shared/notification/notification.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
+import { TaskComponent } from './modules/task/task.component';
 
 
 @NgModule({
@@ -15,10 +17,12 @@ import { DashboardComponent } from './modules/dashboard/dashboard.component';
     SidebarComponent,
     MessageComponent,
     NotificationComponent,
-    DashboardComponent
+    DashboardComponent,
+    TaskComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
   providers: [],
   bootstrap: [
