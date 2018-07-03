@@ -1,5 +1,6 @@
 import { Routes, RouterModule } from "@angular/router";
 import { TaskComponent } from './modules/task/task.component';
+import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 //import { FormComponent } from "./core/form.component";
 //import { NotFoundComponent } from "./core/notFound.component";
 //import { ProductCountComponent } from "./core/productCount.component";
@@ -10,15 +11,8 @@ import { TaskComponent } from './modules/task/task.component';
 //import { LoadGuard } from "./load.guard";
 
 const routes: Routes = [
-    /*{
-        path: "form/:mode/:id", component: FormComponent,
-        canDeactivate: [UnsavedGuard]
-    },*/
-   // { path: "form/:mode", component: FormComponent, canActivate: [TermsGuard] },
-    { path: "task", component: TaskComponent }
-   // { path: "table/:category", component: TableComponent },
-    //{ path: "", redirectTo: "/table", pathMatch: "full" },
-    //{ path: "**", component: NotFoundComponent }
+    { path: "task", component: TaskComponent },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: "**", component: DashboardComponent }
 ]
-
 export const routing = RouterModule.forRoot(routes);

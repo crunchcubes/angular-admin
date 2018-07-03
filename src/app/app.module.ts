@@ -26,12 +26,13 @@ import { TaskComponent } from './modules/task/task.component';
   ],
   providers: [],
   bootstrap: [
-    //AppComponent,
+    AppComponent,
     SidebarComponent,
     MessageComponent,
     NotificationComponent,
 
-    DashboardComponent
+    DashboardComponent,
+    TaskComponent
   ]
 })
 export class AppModule { }
