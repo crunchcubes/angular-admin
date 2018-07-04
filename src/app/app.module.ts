@@ -31,8 +31,7 @@ import { TaskComponent } from './modules/task/task.component';
     MessageComponent,
     NotificationComponent,
 
-    DashboardComponent,
-    TaskComponent
+    //TaskComponent [::KEEP::] Removeed because routing handle loding of these modules
   ]
 })
 export class AppModule { }
