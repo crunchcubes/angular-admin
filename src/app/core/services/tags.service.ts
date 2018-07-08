@@ -12,7 +12,7 @@ export class TagsService {
 
   getAll(): Observable<[string]> {
     return this.apiService.get('/api/task/gettasks')
-          .pipe(map(data => data.tags));
+          .pipe(map(data => data));
   }
 
 }
