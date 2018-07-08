@@ -5,9 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { ArticleListComponent, ArticleMetaComponent, ArticlePreviewComponent } from './article-helpers';
-import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
+//import { FavoriteButtonComponent, FollowButtonComponent } from './buttons';
 import { ListErrorsComponent } from './list-errors.component';
 import { ShowAuthedDirective } from './show-authed.directive';
+import { TaskModule } from '../modules/task/task.module';
+import { TaskComponent } from '../modules/task/task.component';
 
 @NgModule({
   imports: [

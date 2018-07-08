@@ -17,12 +17,12 @@ export class TaskComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.tagsService.getAll()
-      .subscribe(tags => {
+   // this.tagsService.getAll()
+   //   .subscribe(tags => {
         //this.tags = tags;
         //this.tagsLoaded = true;
-        console.log(tags)
-      });
+   //     console.log(tags)
+   //   });
 
   }
 
