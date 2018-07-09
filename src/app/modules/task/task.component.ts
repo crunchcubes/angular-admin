@@ -1,28 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import 'rxjs/add/operator/map';
 
+import {TaskService } from '../../core';
 
-import {TagsService } from '../../core';
-
+import {
+  Task
+} from '../../core';
 
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html'
- // providers: [TagsService]
+ // providers: [TaskService]
 })
 export class TaskComponent implements OnInit {
-
+  tasks: [Task];
   constructor(
-    private tagsService: TagsService
+    private TaskService: TaskService
   ) {}
 
   ngOnInit() {
-   // this.tagsService.getAll()
-   //   .subscribe(tags => {
+    this.TaskService.getAll()
+      .subscribe(tasks => {
+        this.tasks = tasks;
         //this.tags = tags;
         //this.tagsLoaded = true;
-   //     console.log(tags)
-   //   });
+        console.log(tasks)
+      });
 
   }
 
