@@ -1,6 +1,8 @@
 import { Profile } from './profile.model';
 
 export interface Task {
-  Id: string;
-  TaskName: string;
+  id: string;
+  taskName: string;
+  taskDescription: string;
+  projectName: string;
 }
