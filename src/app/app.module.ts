@@ -37,6 +37,7 @@ import {
   bootstrap: [
     AppComponent,
     SidebarComponent,
+    ContentHeaderComponent,
     MessageComponent,
     NotificationComponent
   ]
