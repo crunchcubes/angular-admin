@@ -8,13 +8,13 @@ import {ScriptService} from '../../core/services/script.service'
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
-  private script: ScriptService
+  constructor(private script: ScriptService) { }
   ngOnInit() {
-    initializeCalendar();
+    //initializeCalendar();
 
-    this.script.load('filepicker', 'rangeSlider').then(data => {
+    this.script.load('fullcalendar').then(data => {
       console.log('script loaded ', data);
+      initializeCalendar();
   }).catch(error => console.log(error));
   }
 

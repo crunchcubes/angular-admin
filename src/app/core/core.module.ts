@@ -10,7 +10,8 @@ import {
   //CommentsService,
   JwtService,
   TaskService,
-  UserService
+  UserService,
+  ScriptService
 } from './services';
 
 @NgModule({
@@ -25,7 +26,8 @@ import {
     //CommentsService,
     JwtService,
     TaskService,
-    UserService
+    UserService,
+    ScriptService
   ],
   declarations: []
 })
