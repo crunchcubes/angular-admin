@@ -11,6 +11,8 @@ import { RouterModule } from '@angular/router';
 //import { TaskModule } from '../modules/task/task.module';
 //import { TaskComponent } from '../modules/task/task.component';
 
+import { TaskScheduleComponent } from './task-schedule/task-schedule.component'
+
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import { RouterModule } from '@angular/router';
     FollowButtonComponent,
     ListErrorsComponent,
     ShowAuthedDirective*/
+    TaskScheduleComponent
   ],
   exports: [
     /*ArticleListComponent,
@@ -41,6 +44,7 @@ import { RouterModule } from '@angular/router';
     //ListErrorsComponent,
     RouterModule,
     //ShowAuthedDirective
+    TaskScheduleComponent
   ]
 })
 export class SharedModule {}

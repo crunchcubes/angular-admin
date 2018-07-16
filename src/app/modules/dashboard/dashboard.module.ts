@@ -6,7 +6,7 @@ import { TaskAuthResolver } from './dashboard-auth-resolver.service';
 import { SharedModule } from '../../shared';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { CommonModule } from "@angular/common";
-import {TaskScheduleComponent} from './task-schedule.component'
+//import {TaskScheduleComponent} from './task-schedule.component'
 
 @NgModule({
   imports: [
@@ -16,7 +16,7 @@ import {TaskScheduleComponent} from './task-schedule.component'
   ],
   declarations: [
     DashboardComponent,
-    TaskScheduleComponent
+    //TaskScheduleComponent
   ],
   providers: [
     TaskAuthResolver
