@@ -11,8 +11,8 @@ import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 //import { LoadGuard } from "./load.guard";
 
 const routes: Routes = [
+    { path: "", redirectTo: "home", pathMatch: "full" },
     { path: "task", component: TaskComponent },
-    { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "**", component: DashboardComponent }
 ]
 export const routing = RouterModule.forRoot(routes);
