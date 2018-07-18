@@ -30,7 +30,7 @@
           |-- _base.scss
           |-- styles.scss
 
-
+https://github.com/avatsaev/angular-contacts-app-example
 
 https://username:pass@github.com/username/angular-admin.git
 

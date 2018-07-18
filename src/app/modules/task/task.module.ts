@@ -6,6 +6,7 @@ import { TaskAuthResolver } from './task-auth-resolver.service';
 import { SharedModule } from '../../shared';
 import { TaskRoutingModule } from './task-routing.module';
 import { CommonModule } from "@angular/common";
+import { TaskNewComponent } from './task-new/task-new.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { CommonModule } from "@angular/common";
     TaskRoutingModule
   ],
   declarations: [
-    TaskComponent
+    TaskComponent,
+    TaskNewComponent
   ],
   providers: [
     TaskAuthResolver
