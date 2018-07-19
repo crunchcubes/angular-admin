@@ -16,6 +16,8 @@ import {
   ContentHeaderComponent,
   SharedModule
 } from './shared';
+
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 //import { TaskScheduleComponent } from './task-schedule/task-schedule.component'; 
 
 @NgModule({
@@ -34,7 +36,9 @@ import {
     SharedModule,
     TaskModule,
     DashboardModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [
