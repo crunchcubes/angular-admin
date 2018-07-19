@@ -11,7 +11,7 @@
                     <!-- text input -->
                     <div class="form-group">
                       <label>Task Name</label>
-                      <input type="text" class="form-control" placeholder="Enter ...">
+                      <input type="text" class="form-control" placeholder="Enter ..." [formControl]="taskNameControl">
                     </div>
                     <!-- textarea -->
                     <div class="form-group">
@@ -21,14 +21,20 @@
                     <!-- select -->
                     <div class="form-group">
                       <label>Project</label>
-                      <select class="form-control">
-                        <option>option 1</option>
-                        <option>option 2</option>
-                      </select>
+                      <select class="form-control select2" style="width: 100%;">
+                          <option selected="selected"></option>
+                          <option>Project1</option>
+                          <option>Project2</option>
+                        </select>
                     </div>
                   </form>
                 </div>
-                <!-- /.card-body -->
+                <div class="card-footer">
+                    <div class="float-right">
+                      <button type="submit" class="btn btn-primary" (click)="addTask()"><i class="fa fa-save"></i> Save</button>
+                    </div>
+                    <button type="reset" class="btn btn-default" [routerLink]="['/task']"><i class="fa fa-times"></i> Cancel</button>
+                  </div>
               </div>
               <!-- /.card -->
             </div><!-- /.container-fluid -->
