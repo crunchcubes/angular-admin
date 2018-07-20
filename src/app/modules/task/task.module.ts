@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+//import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TaskComponent } from './task.component';
 import { TaskAuthResolver } from './task-auth-resolver.service';
 import { SharedModule } from '../../shared';
@@ -13,8 +13,8 @@ import { TaskNewComponent } from './task-new/task-new.component';
     CommonModule,
     SharedModule,
     TaskRoutingModule,
-    ReactiveFormsModule,
-    FormsModule
+    /*ReactiveFormsModule,
+    FormsModule*/
   ],
   declarations: [
     TaskComponent,

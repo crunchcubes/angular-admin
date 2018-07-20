@@ -37,9 +37,9 @@ import { TaskScheduleComponent } from './task-schedule/task-schedule.component'
     ArticlePreviewComponent,
     CommonModule,
     FavoriteButtonComponent,
-    FollowButtonComponent,
+    FollowButtonComponent,*/
     FormsModule,
-    ReactiveFormsModule,*/
+    ReactiveFormsModule,
     HttpClientModule,
     //ListErrorsComponent,
     RouterModule,
