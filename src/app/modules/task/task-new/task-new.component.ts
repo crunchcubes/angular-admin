@@ -6,16 +6,17 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrls: ['./task-new.component.css']
 })
 export class TaskNewComponent implements OnInit {
-  taskNewControl: FormControl
+  taskNameControl: FormControl
   constructor() { 
-    this.taskNewControl = new FormControl();
+    this.taskNameControl = new FormControl();
   }
 
   ngOnInit() {
   }
 
   addTask() {
-    const taskName = this.taskNewControl.value;
+    const taskName = this.taskNameControl.value;
+    console.log(this.taskNameControl);
     alert(taskName);
   }
 }
