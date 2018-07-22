@@ -13,8 +13,8 @@ export class ProjectService {
   ) {}
 
   getAll(): Observable<[Project]> {
-    return this.apiService.get('/project/getprojects')
-      .pipe(map((data: {tasks: [Project]}) => data.tasks));
+    return this.apiService.get('/project/get-projects')
+      .pipe(map((data: {projects: [Project]}) => data.projects));
   }
 
 }

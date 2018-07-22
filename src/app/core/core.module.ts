@@ -10,6 +10,7 @@ import {
   //CommentsService,
   JwtService,
   TaskService,
+  ProjectService,
   UserService,
   ScriptService
 } from './services';
@@ -26,6 +27,7 @@ import {
     //CommentsService,
     JwtService,
     TaskService,
+    ProjectService,
     UserService,
     ScriptService
   ],

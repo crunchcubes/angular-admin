@@ -19,7 +19,7 @@ export class TaskService {
   }*/
 
   getAll(): Observable<[Task]> {
-    return this.apiService.get('/task/gettasks')
+    return this.apiService.get('/task/get-tasks')
       .pipe(map((data: {tasks: [Task]}) => data.tasks));
   }
 

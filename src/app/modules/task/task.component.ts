@@ -16,18 +16,17 @@ import {
 export class TaskComponent implements OnInit {
   tasks: [Task];
   constructor(
-    private TaskService: TaskService
+    private taskService: TaskService
   ) {}
 
   ngOnInit() {
-    this.TaskService.getAll()
+    this.taskService.getAll()
       .subscribe(tasks => {
         this.tasks = tasks;
         //this.tags = tags;
         //this.tagsLoaded = true;
         console.log(tasks)
       });
-
   }
 
 }
