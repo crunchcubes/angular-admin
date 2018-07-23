@@ -7,11 +7,15 @@ import {
   Task,
   Project
 } from '../../../core';
+
+import { initializeFormElements } from '../../../../assets/external-js/functions';
+
 @Component({
   selector: 'app-task-new',
   templateUrl: './task-new.component.html',
   styleUrls: ['./task-new.component.css']
 })
+
 export class TaskNewComponent implements OnInit {
   taskNameControl: FormControl;
   projects: [Project];
@@ -28,6 +32,7 @@ export class TaskNewComponent implements OnInit {
         //this.tags = tags;
         //this.tagsLoaded = true;
         console.log(projects)
+        initializeFormElements();
       });
   }
 

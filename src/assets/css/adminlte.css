@@ -12459,7 +12459,7 @@ label:not(.form-check-label):not(.custom-file-label) {
 }
 
 .select2-container--default .select2-selection--single .select2-selection__arrow {
-  height: 28px;
+  /*height: 28px;*/
   right: 3px;
 }
 

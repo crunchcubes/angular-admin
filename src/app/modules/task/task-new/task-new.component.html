@@ -22,9 +22,7 @@
                     <div class="form-group">
                       <label>Project</label>
                       <select class="form-control select2" style="width: 100%;">
-                          <option selected="selected"></option>
-                          <option>Project1</option>
-                          <option>Project2</option>
+                          <option *ngFor="let project of projects">{{project.projectName}}</option>
                         </select>
                     </div>
                   </form>

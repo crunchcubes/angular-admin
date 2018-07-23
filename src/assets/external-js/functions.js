@@ -5,7 +5,9 @@
 export function initializeCalendar(){
     $(_initializeCalendar());
 }
-
+export function initializeFormElements(){
+  _initializeFormElements();
+}
 function _initializeCalendar(){
 
     /* initialize the external events
@@ -129,4 +131,8 @@ function _initializeCalendar(){
       //Remove event from text input
       $('#new-event').val('')
     })
+  }
+
+  function _initializeFormElements(){
+    $('.select2').select2();
   }
