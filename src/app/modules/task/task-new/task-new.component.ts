@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
-import {ProjectService } from '../../../core';
+import {ProjectService, TaskService } from '../../../core';
 
 import {
-  Task,
   Project
 } from '../../../core';
 
@@ -19,9 +18,13 @@ import { initializeFormElements } from '../../../../assets/external-js/functions
 export class TaskNewComponent implements OnInit {
   taskNameControl: FormControl;
   projects: [Project];
-  constructor(
-    private projectService: ProjectService
-  ) { 
+  newTask:any;
+  constructor
+  (
+    private projectService: ProjectService,
+    private taskService: TaskService
+  ) 
+  { 
     this.taskNameControl = new FormControl();
   }
 
@@ -38,7 +41,12 @@ export class TaskNewComponent implements OnInit {
 
   addTask() {
     const taskName = this.taskNameControl.value;
+    this.newTask = {
+      projectId:0,
+      taskName:"New Task",
+      taskDescription:"Task Description"
+    };
+    this.taskService.add(this.newTask);
     console.log(this.taskNameControl);
-    alert(taskName);
   }
 }

@@ -23,4 +23,12 @@ export class TaskService {
       .pipe(map((data: {tasks: [Task]}) => data.tasks));
   }
 
+  add(payload): Observable<Comment> {
+    return this.apiService
+    .post(
+      '/task/add-task',
+      { task: { body: payload } }
+    ).pipe(map(data => data.comment));
+  }
+
 }

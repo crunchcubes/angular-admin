@@ -46,9 +46,7 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
       <app-message></app-message>
-      <!-- Notifications Dropdown Menu -->
       <app-notification></app-notification>
       <li class="nav-item">
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
@@ -57,41 +55,23 @@
       </li>
     </ul>
   </nav>
-  <!-- /.navbar -->
 <app-sidebar></app-sidebar>
-  <!-- Main Sidebar Container -->
- 
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+<div class="content-wrapper">
   <app-content-header></app-content-header>
-    <!-- Main content -->
-    <app-root></app-root>
-
-
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <footer class="main-footer">
+  <app-root></app-root>
+</div>
+<footer class="main-footer">
     <div class="float-right d-none d-sm-block">
       <b>Version</b> 0.0.0
     </div>
     <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">Angular Admin</a>.</strong> All rights
     reserved.
-  </footer>
+</footer>
 
-  <!-- Control Sidebar -->
-  <aside class="x-control-sidebar x-control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-  </aside>
+<aside class="x-control-sidebar x-control-sidebar-dark"></aside>
 </div>
 </body>
 <script>
-    $(function () {
-      //Initialize Select2 Elements
-       $('.select2').select2()
-    });
+ 
 </script>
 </html>
