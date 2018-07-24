@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/map';
 
-import {TaskService } from '../../core';
+import {TaskService, UtilityService } from '../../core';
 
 import {
   Task
@@ -16,7 +16,8 @@ import {
 export class TaskComponent implements OnInit {
   tasks: [Task];
   constructor(
-    private taskService: TaskService
+    private taskService: TaskService,
+    private util:UtilityService
   ) {}
 
   ngOnInit() {

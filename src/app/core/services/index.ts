@@ -5,3 +5,4 @@ export * from './task.service';
 export * from './project.service';
 export * from './user.service';
 export * from './script.service';
+export * from './utility.service';

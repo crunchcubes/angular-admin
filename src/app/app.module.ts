@@ -9,13 +9,17 @@ import { AppRoutingModule } from './app-routing.module';
 //import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+//import { UtilityService } from './core/services/utility.service'
 import {
   SidebarComponent,
+  NavbarComponent,
   NotificationComponent,
   MessageComponent,
   ContentHeaderComponent,
   SharedModule
 } from './shared';
+
+import {UtilityService } from './core';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 //import { TaskScheduleComponent } from './task-schedule/task-schedule.component'; 
@@ -23,11 +27,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     SidebarComponent,
     MessageComponent,
     NotificationComponent,
-    //DashboardComponent,
-    ContentHeaderComponent
+    ContentHeaderComponent,
+    NavbarComponent
   ],
 
   imports: [
@@ -40,10 +45,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UtilityService],
   bootstrap: [
     AppComponent,
     SidebarComponent,
+    NavbarComponent,
     ContentHeaderComponent,
     MessageComponent,
     NotificationComponent
