@@ -17,6 +17,8 @@ class HTTPHandler(BaseHTTPRequestHandler):
 		self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
 		self.send_header("Access-Control-Allow-Headers", "Content-Type")
 		self.end_headers()
+	def do_POST(self):
+		self.do_GET()
 	def handle_http(self, status_code, path):
 		self.send_response(status_code)
 		self.send_header('Content-type', 'text/html')

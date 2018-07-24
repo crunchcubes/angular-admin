@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import {Router} from "@angular/router";
 
 import {ProjectService, TaskService } from '../../../core';
 
@@ -22,7 +23,8 @@ export class TaskNewComponent implements OnInit {
   constructor
   (
     private projectService: ProjectService,
-    private taskService: TaskService
+    private taskService: TaskService,
+    private router: Router
   ) 
   { 
     this.taskNameControl = new FormControl();
@@ -32,9 +34,6 @@ export class TaskNewComponent implements OnInit {
     this.projectService.getAll()
       .subscribe(projects => {
         this.projects = projects;
-        //this.tags = tags;
-        //this.tagsLoaded = true;
-        console.log(projects)
         initializeFormElements();
       });
   }
@@ -46,7 +45,12 @@ export class TaskNewComponent implements OnInit {
       taskName:"New Task",
       taskDescription:"Task Description"
     };
-    this.taskService.add(this.newTask);
-    console.log(this.taskNameControl);
+    this.taskService.add(this.newTask)
+    .subscribe(response => {
+      console.log(response);
+      if(response){
+        this.router.navigate(['task']);
+      }
+    });
   }
 }
