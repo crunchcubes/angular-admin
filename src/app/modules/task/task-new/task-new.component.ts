@@ -5,6 +5,7 @@ import {Router} from "@angular/router";
 import {ProjectService, TaskService } from '../../../core';
 
 import {
+  BaseComponent,
   Project
 } from '../../../core';
 
@@ -12,21 +13,22 @@ import { initializeFormElements } from '../../../../assets/external-js/functions
 
 @Component({
   selector: 'app-task-new',
-  templateUrl: './task-new.component.html',
-  styleUrls: ['./task-new.component.css']
+  templateUrl: './task-new.component.html'
 })
 
-export class TaskNewComponent implements OnInit {
-  taskNameControl: FormControl;
-  projects: [Project];
+export class TaskNewComponent extends BaseComponent {
+  private taskNameControl: FormControl;
+  private projects: [Project];
+
   newTask:any;
   constructor
   (
     private projectService: ProjectService,
     private taskService: TaskService,
-    private router: Router
+    private router: Router,
   ) 
   { 
+    super();
     this.taskNameControl = new FormControl();
   }
 

@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 //import { TaskScheduleComponent } from './task-schedule.component'
-
+import {BaseComponent} from '../../core';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html'
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent extends BaseComponent {
 
-  constructor() { }
+  constructor() { super() }
   ngOnInit() {
   }
 

@@ -2,10 +2,14 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class UtilityService {
-  title:string;
-  constructor () {}
+  static title:string;
+  constructor () {UtilityService.title = 'No title'}
 
   getTitle(): string{
-    return 'No Title';
+    return UtilityService.title;
+  }
+
+  setTitle(title: string):void{
+    UtilityService.title = title;
   }
 }
