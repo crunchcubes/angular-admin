@@ -33,6 +33,9 @@ export class TaskNewComponent extends BaseComponent {
   }
 
   ngOnInit() {
+    super.ngOnInit();
+    this.setTitle('New Task');
+
     this.projectService.getAll()
       .subscribe(projects => {
         this.projects = projects;

@@ -7,15 +7,13 @@ import {DependencyResolverService} from '../../core';
   templateUrl: './content-header.component.html'
 })
 export class ContentHeaderComponent implements OnInit {
-  //@HostBinding('title')
   title:string;
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
-    this.title = 'App Title';
-    
-    DependencyResolverService.getUtilityService().change.subscribe(title => {
-      this.title = title;
+    DependencyResolverService.getUtilityService().onChange.subscribe(args => {
+      this.title = args.value;
     });
   }
 

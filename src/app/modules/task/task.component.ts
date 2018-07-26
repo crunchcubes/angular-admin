@@ -26,9 +26,8 @@ export class TaskComponent extends BaseComponent {
     this.taskService.getAll()
       .subscribe(tasks => {
         this.tasks = tasks;
-        this.tagsLoaded = true;
+        this.loaded = true;
         console.log(tasks)
       });
   }
-
 }

@@ -9,6 +9,8 @@ export class DashboardComponent extends BaseComponent {
 
   constructor() { super() }
   ngOnInit() {
+    super.ngOnInit();
+    this.setTitle('Dashboard');
   }
 
 }

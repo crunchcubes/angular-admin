@@ -6,11 +6,11 @@ export class UtilityService {
 
   constructor () {}
 
-  @Output() change: EventEmitter<string> = new EventEmitter();
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
 
   setTitle(title: string) {
     this.title = title;
-    this.change.emit(this.title);
+    this.onChange.emit({sender: this, value: title});
   }
   getTitle(): string{
     return this.title;
