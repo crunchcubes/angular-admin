@@ -1,15 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class UtilityService {
-  static title:string;
-  constructor () {UtilityService.title = 'No title'}
+  private title:string;
 
-  getTitle(): string{
-    return UtilityService.title;
+  constructor () {}
+
+  @Output() change: EventEmitter<string> = new EventEmitter();
+
+  setTitle(title: string) {
+    this.title = title;
+    this.change.emit(this.title);
   }
-
-  setTitle(title: string):void{
-    UtilityService.title = title;
+  getTitle(): string{
+    return this.title;
   }
 }

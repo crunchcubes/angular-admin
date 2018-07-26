@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+//Reference: https://medium.com/dailyjs/3-ways-to-communicate-between-angular-components-a1e3f3304ecb
+
+import { Component} from '@angular/core';
 import 'rxjs/add/operator/map';
 
-import {BaseComponent, TaskService} from '../../core';
+import {DependencyResolverService, BaseComponent, TaskService} from '../../core';
 
 import {
   Task
@@ -15,11 +16,13 @@ import {
 })
 export class TaskComponent extends BaseComponent {
   tasks: [Task];
+
   constructor(private taskService: TaskService) {super()}
 
   ngOnInit() {  
     super.ngOnInit();
-    this.util.setTitle("Tasks");
+    this.setTitle('My Tasks');
+
     this.taskService.getAll()
       .subscribe(tasks => {
         this.tasks = tasks;

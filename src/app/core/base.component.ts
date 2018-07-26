@@ -1,15 +1,19 @@
 import {OnInit } from '@angular/core';
 import {UtilityService } from '../core';
+import {DependencyResolverService} from '../core';
 
 export class BaseComponent implements OnInit {   
-  protected util:UtilityService;
   protected tagsLoaded: boolean;
   constructor() {
-    this.util = new UtilityService();
+
+  }
+
+  setTitle(title:string){
+    DependencyResolverService.getUtilityService().setTitle(title);
   }
 
   ngOnInit() {  
-    console.log(this.util.getTitle());
+    
   }
 
 }
