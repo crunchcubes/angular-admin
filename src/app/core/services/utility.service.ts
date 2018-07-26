@@ -6,13 +6,18 @@ export class UtilityService {
 
   constructor () {}
 
-  @Output() onChange: EventEmitter<any> = new EventEmitter();
+  @Output() onTitleChanged: EventEmitter<any> = new EventEmitter();
+  @Output() onNavigationChange: EventEmitter<any> = new EventEmitter();
 
   setTitle(title: string) {
     this.title = title;
-    this.onChange.emit({sender: this, value: title});
+    this.onTitleChanged.emit({sender: this, value: title});
   }
   getTitle(): string{
     return this.title;
+  }
+
+  setBreadCrumb(items: any[]) {
+    this.onNavigationChange.emit({sender: this, value: items});
   }
 }

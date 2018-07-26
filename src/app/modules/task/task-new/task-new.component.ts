@@ -5,10 +5,10 @@ import {Router} from "@angular/router";
 import {ProjectService, TaskService } from '../../../core';
 
 import {
-  BaseComponent,
   Project
 } from '../../../core';
 
+import {BaseComponent} from '../../../core/base.component';
 import { initializeFormElements } from '../../../../assets/external-js/functions';
 
 @Component({

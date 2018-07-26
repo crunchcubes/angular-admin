@@ -3,8 +3,8 @@
 import { Component} from '@angular/core';
 import 'rxjs/add/operator/map';
 
-import {DependencyResolverService, BaseComponent, TaskService} from '../../core';
-
+import {TaskService} from '../../core';
+import {BaseComponent} from '../../core/base.component';
 import {
   Task
 } from '../../core';
@@ -22,6 +22,7 @@ export class TaskComponent extends BaseComponent {
   ngOnInit() {  
     super.ngOnInit();
     this.setTitle('My Tasks');
+    this.setBreadCrumb([{name: 'Task', link: '/task', type : 'active'}]);
 
     this.taskService.getAll()
       .subscribe(tasks => {

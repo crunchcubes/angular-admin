@@ -8,12 +8,18 @@ import {DependencyResolverService} from '../../core';
 })
 export class ContentHeaderComponent implements OnInit {
   title:string;
+  items:any;
   constructor() {
   }
 
   ngOnInit() {
-    DependencyResolverService.getUtilityService().onChange.subscribe(args => {
+    DependencyResolverService.getUtilityService().onTitleChanged.subscribe(args => {
       this.title = args.value;
+    });
+
+    DependencyResolverService.getUtilityService().onNavigationChange.subscribe(args => {
+      console.log(args);
+      this.items = args.value;
     });
   }
 
