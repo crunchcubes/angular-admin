@@ -12,13 +12,14 @@ const routes: Routes = [
     redirectTo: 'task',
     pathMatch: 'full'
   },
-  {
+  /*{
     path: 'auth',
     component: AuthComponent
-  },
+  },*/
   {
     path: 'task',
-    component: TaskComponent
+    component: TaskComponent,
+    //loadChildren: './modules/task/task.module#TaskModule'
   },
   {
     path: 'home',

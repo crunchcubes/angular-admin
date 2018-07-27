@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TaskComponent } from './task.component';
-//import { TaskAuthResolver } from './task-auth-resolver.service';
+import { TaskAuthResolver } from './task-auth-resolver.service';
 
 const routes: Routes = [
   {
     path: '',
     component: TaskComponent,
-    /*resolve: {
+    resolve: {
       isAuthenticated: TaskAuthResolver
-    }*/
+    }
   }
 ];
 
