@@ -12,7 +12,8 @@
         !-->
         <ol class="breadcrumb float-sm-right">
             <li *ngFor="let item of items"  class="breadcrumb-item {{item.type}}">
-              <a href="#">{{item.name}}</a>
+              <a *ngIf="item.type != 'active' else altContent" routerLink="{{item.link}}">{{item.name}}</a>
+              <ng-template #altContent>{{item.name}}</ng-template>
             </li>
         </ol>
       </div>

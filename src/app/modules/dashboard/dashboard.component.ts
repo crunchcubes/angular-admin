@@ -11,6 +11,7 @@ export class DashboardComponent extends BaseComponent {
   ngOnInit() {
     super.ngOnInit();
     this.setTitle('Dashboard');
+    this.setBreadCrumb([{name: 'Dashboard', link: '/', type : 'active'}]);
   }
 
 }

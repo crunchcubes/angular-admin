@@ -16,7 +16,7 @@ export class BaseComponent implements OnInit {
   }
 
   setBreadCrumb(items:any[]){
-    let mergeItems = items.concat([{name: 'Home', link: '/home', type : ''}])
+    let mergeItems = [{name: 'Home', link: '/home', type : ''}].concat(items)
     DependencyResolverService.getUtilityService().setBreadCrumb(mergeItems);
   }
 

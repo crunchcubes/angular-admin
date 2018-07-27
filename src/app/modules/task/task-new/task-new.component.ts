@@ -35,6 +35,10 @@ export class TaskNewComponent extends BaseComponent {
   ngOnInit() {
     super.ngOnInit();
     this.setTitle('New Task');
+    this.setBreadCrumb([
+      {name: 'Task', link: '/task'}, 
+      {name: 'New Task', link: '/task-new', type : 'active'}]
+  );
 
     this.projectService.getAll()
       .subscribe(projects => {
