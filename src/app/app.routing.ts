@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from "@angular/router";
+import { AuthComponent } from './modules/auth/auth.component';
 import { TaskComponent } from './modules/task/task.component';
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 //import { FormComponent } from "./core/form.component";
@@ -11,8 +12,8 @@ import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 //import { LoadGuard } from "./load.guard";
 
 const routes: Routes = [
-    { path: "", redirectTo: "home", pathMatch: "full" },
-    { path: "task", component: TaskComponent },
-    { path: "**", component: DashboardComponent }
+    //{ path: "", redirectTo: "home", pathMatch: "full" },
+    //{ path: "task", component: TaskComponent },
+    //{ path: "**", component: DashboardComponent }
 ]
 export const routing = RouterModule.forRoot(routes);

@@ -9,7 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 //import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
-//import { UtilityService } from './core/services/utility.service'
+import { AuthModule } from './modules/auth/auth.module';
 import {
   SidebarComponent,
   NavbarComponent,
@@ -22,7 +22,6 @@ import {
 import {UtilityService } from './core';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-//import { TaskScheduleComponent } from './task-schedule/task-schedule.component'; 
 
 @NgModule({
   declarations: [
@@ -39,6 +38,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     BrowserModule,
     CoreModule,
     SharedModule,
+    AuthModule,
     TaskModule,
     DashboardModule,
     AppRoutingModule,

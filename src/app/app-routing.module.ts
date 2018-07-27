@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-
+import { AuthComponent } from './modules/auth/auth.component';
 import { TaskComponent } from './modules/task/task.component';
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 import { TaskNewComponent } from './modules/task/task-new/task-new.component';
@@ -11,6 +11,10 @@ const routes: Routes = [
     path: '',
     redirectTo: 'task',
     pathMatch: 'full'
+  },
+  {
+    path: 'auth',
+    component: AuthComponent
   },
   {
     path: 'task',
