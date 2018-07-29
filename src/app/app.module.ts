@@ -5,7 +5,6 @@ import { CoreModule } from './core/core.module';
 
 import { AppComponent } from './app.component';
 //import { routing } from "./app.routing"; [::KEEP::] - Example of routing with component only
-import { AppRoutingModule } from './app-routing.module';
 //import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
@@ -18,6 +17,7 @@ import {
   ContentHeaderComponent,
   SharedModule
 } from './shared';
+import { AppRoutingModule } from './app-routing.module';
 
 import {UtilityService } from './core';
 
@@ -36,14 +36,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
   imports: [
     BrowserModule,
+    FormsModule,
     CoreModule,
     SharedModule,
     AuthModule,
     TaskModule,
     DashboardModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [UtilityService],
   bootstrap: [
