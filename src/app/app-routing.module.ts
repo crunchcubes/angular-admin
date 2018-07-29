@@ -9,7 +9,7 @@ import { TaskNewComponent } from './modules/task/task-new/task-new.component';
 const routes: Routes = [
    {
     path: '',
-    redirectTo: 'task',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   /*{
