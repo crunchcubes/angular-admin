@@ -2,20 +2,30 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { AuthComponent } from './modules/auth/auth.component';
-import { TaskComponent } from './modules/task/task.component';
 import { DashboardComponent } from "./modules/dashboard/dashboard.component";
+import { TaskComponent } from './modules/task/task.component';
 import { TaskNewComponent } from './modules/task/task-new/task-new.component';
+
+import { TaskModule } from './modules/task/task.module';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 const routes: Routes = [
    {
     path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    loadChildren: () => DashboardModule
+  },
+  {
+    path: 'home',
+    loadChildren: () => DashboardModule
+  },
+  {
+    path: 'task',
+    loadChildren: () => TaskModule,
   },
   /*{
     path: 'auth',
     component: AuthComponent
-  },*/
+  },
   {
     path: 'task',
     component: TaskComponent,
@@ -28,7 +38,7 @@ const routes: Routes = [
   { 
     path: "task/task-new", 
     component: TaskNewComponent 
-  },
+  },*/
   /*{
     path: 'dashboardx',
     loadChildren: './modules/task/task.module#TaskModule'

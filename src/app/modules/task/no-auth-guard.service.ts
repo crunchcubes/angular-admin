@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { UserService } from '../../core';
-import { take } from 'rxjs/operators';
+import { map ,  take } from 'rxjs/operators';
 
 @Injectable()
-export class DashboardAuthResolver implements Resolve<boolean> {
+export class NoAuthGuard implements CanActivate {
   constructor(
     private router: Router,
     private userService: UserService
   ) {}
 
-  resolve(
+  canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> {
 
-   return this.userService.isAuthenticated.pipe(take(1));
+    return this.userService.isAuthenticated.pipe(take(1), map(isAuth => !isAuth));
 
   }
 }
