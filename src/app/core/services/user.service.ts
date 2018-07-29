@@ -48,6 +48,7 @@ export class UserService {
     this.currentUserSubject.next(user);
     // Set isAuthenticated to true
     this.isAuthenticatedSubject.next(true);
+    console.log("Token: " + user.token);
   }
 
   purgeAuth() {
@@ -64,6 +65,7 @@ export class UserService {
     return this.apiService.post('/users' + route, {user: credentials})
       .pipe(map(
       data => {
+        console.log(data);
         this.setAuth(data.user);
         return data;
       }

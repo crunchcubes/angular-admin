@@ -6,6 +6,7 @@ import { DashboardComponent } from "./modules/dashboard/dashboard.component";
 import { TaskComponent } from './modules/task/task.component';
 import { TaskNewComponent } from './modules/task/task-new/task-new.component';
 
+import { AuthModule } from './modules/auth/auth.module';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
@@ -15,7 +16,11 @@ const routes: Routes = [
     loadChildren: () => DashboardModule
   },
   {
-    path: 'home',
+    path: 'auth',
+    loadChildren: () => AuthModule,
+  },
+  {
+    path: 'dashboard',
     loadChildren: () => DashboardModule
   },
   {

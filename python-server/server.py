@@ -13,9 +13,15 @@ class HTTPHandler(BaseHTTPRequestHandler):
 	def do_OPTIONS(self):
 		self.send_response(200, "ok")
 		self.send_header('Access-Control-Allow-Origin', '*')
-		self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+		self.send_header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT')
 		self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
 		self.send_header("Access-Control-Allow-Headers", "Content-Type")
+		
+		
+		self.send_header('Access-Control-Allow-Credentials', 'true')
+		self.send_header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+		#self.send_header('Access-Control-Allow-Headers', 'Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers')
+		
 		self.end_headers()
 	def do_POST(self):
 		self.do_GET()
@@ -58,7 +64,7 @@ class HTTPHandler(BaseHTTPRequestHandler):
 				#self.send_response(200)
 				self.send_response(200, "ok")
 				self.send_header('Access-Control-Allow-Origin', '*')
-				self.send_header('Access-Control-Allow-Methods', 'GET, OPTIONS')
+				self.send_header('Access-Control-Allow-Methods', 'GET,HEAD,OPTIONS,POST,PUT')
 				self.send_header("Access-Control-Allow-Headers", "X-Requested-With")
 				self.send_header("Access-Control-Allow-Headers", "Content-Type")
 				# self.end_headers()
