@@ -45,26 +45,12 @@ canActivate(
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-    // redirect and return false
-    if (!this.isLoggedIn) {
-      this.router.navigate(['']);
-      return false;
-    }
-
     return true;
   }
 
   canActivateChild(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
-    // redirect and return false
-    if (!this.isLoggedIn) {
-      this.router.navigate(['']);
-      return false;
-    }
-
     return true;
   }
 

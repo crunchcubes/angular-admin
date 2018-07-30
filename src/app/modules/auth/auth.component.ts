@@ -30,6 +30,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit() {
     this.route.url.subscribe(data => {
+      this.checkAction(data[data.length - 1].path);
       // Get the last piece of the URL (it's either 'login' or 'register')
       this.authType = 'login';
       // Set a title for the page accordingly
@@ -39,6 +40,13 @@ export class AuthComponent implements OnInit {
        // this.authForm.addControl('username', new FormControl());
       }
     });
+  }
+
+  checkAction(action: string):void{
+    if(action === 'logout'){
+      this.userService.logout();
+      this.router.navigateByUrl('auth/login')
+    }
   }
 
   submitForm() {
