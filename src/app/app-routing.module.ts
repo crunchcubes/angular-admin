@@ -11,9 +11,14 @@ import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 const routes: Routes = [
-   {
+   /*{
     path: '',
-    loadChildren: () => DashboardModule
+    loadChildren: () => AuthModule
+  },*/
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'auth'
   },
   {
     path: 'auth',
@@ -27,7 +32,8 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () => TaskModule,
   },
-  /*{
+  //{ path: '**', component: PageNotFoundComponent }
+  /*{ 
     path: 'auth',
     component: AuthComponent
   },

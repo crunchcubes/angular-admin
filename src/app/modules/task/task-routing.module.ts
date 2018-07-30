@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TaskComponent } from './task.component';
 import { TaskNewComponent } from './task-new/task-new.component';
 import { TaskAuthResolver } from './task-auth-resolver.service';
-import { NoAuthGuard } from './no-auth-guard.service';
+//import { NoAuthGuard } from './no-auth-guard.service';
 import { AuthGuard } from '../../core';
 
 /*const routes: Routes = [

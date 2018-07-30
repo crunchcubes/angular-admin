@@ -7,6 +7,7 @@ export * from './content-header/content-header.component';
 export * from './sidebar/sidebar.component';
 export * from './message/message.component';
 export * from './notification/notification.component';
+export * from './user-menu/user-menu.component';
 export * from './navbar/navbar.component';
 
 //export * from './show-authed.directive';

@@ -7,7 +7,7 @@ import { SharedModule } from '../../shared';
 import { TaskRoutingModule } from './task-routing.module';
 import { CommonModule } from "@angular/common";
 import { TaskNewComponent } from './task-new/task-new.component';
-import { NoAuthGuard } from './no-auth-guard.service';
+//import { NoAuthGuard } from './no-auth-guard.service';
 
 @NgModule({
   imports: [
@@ -23,7 +23,7 @@ import { NoAuthGuard } from './no-auth-guard.service';
   ],
   providers: [
     //TaskAuthResolver,
-    NoAuthGuard
+    //NoAuthGuard
   ]
 })
 export class TaskModule {}

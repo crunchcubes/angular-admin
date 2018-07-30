@@ -23,10 +23,10 @@ export class AuthGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-
+      console.log('canActivate:main');
     // redirect and return false
     if (!this.userService.isLoggedIn()) {
-      this.router.navigate(['']);
+      //this.router.navigate(['']);
       return false;
     }
 
@@ -37,9 +37,10 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
 
+      console.log('canActivate:child');
     // redirect and return false
     if (!this.userService.isLoggedIn()) {
-      this.router.navigate(['']);
+      //this.router.navigate(['']);
       return false;
     }
 

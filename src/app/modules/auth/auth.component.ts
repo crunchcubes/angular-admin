@@ -29,6 +29,11 @@ export class AuthComponent implements OnInit {
   }
 
   ngOnInit() {
+    /*if (this.userService.isLoggedIn()) {
+      this.router.navigate(['/dashboard']);
+      return;
+    }*/
+    console.log('AuthComponent >>');
     this.route.url.subscribe(data => {
       this.checkAction(data[data.length - 1].path);
       // Get the last piece of the URL (it's either 'login' or 'register')
@@ -45,7 +50,7 @@ export class AuthComponent implements OnInit {
   checkAction(action: string):void{
     if(action === 'logout'){
       this.userService.logout();
-      this.router.navigateByUrl('auth/login')
+      //this.router.navigateByUrl('auth/login')
     }
   }
 

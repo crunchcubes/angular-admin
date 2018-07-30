@@ -14,6 +14,7 @@ import {
   NavbarComponent,
   NotificationComponent,
   MessageComponent,
+  UserMenuComponent,
   ContentHeaderComponent,
   SharedModule
 } from './shared';
@@ -30,8 +31,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     SidebarComponent,
     MessageComponent,
     NotificationComponent,
+    UserMenuComponent,
     ContentHeaderComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserMenuComponent
   ],
 
   imports: [
@@ -52,7 +55,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     NavbarComponent,
     ContentHeaderComponent,
     MessageComponent,
-    NotificationComponent
+    NotificationComponent,
+    UserMenuComponent
   ]
 })
 export class AppModule {}
