@@ -86,5 +86,9 @@ export class UserService {
       return data.user;
     }));
   }
-
+  isLoggedIn():Observable<boolean> {
+    //return this.http.get(ApiResources.LOGON).map(response => response.ok);
+    var  theBoolean = new BehaviorSubject<boolean>(false);
+    return theBoolean.asObservable().map(response => true);
+}
 }
