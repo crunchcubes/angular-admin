@@ -9,6 +9,7 @@ export class DashboardComponent extends BaseComponent {
 
   constructor() { super() }
   ngOnInit() {
+    console.log('DashboardComponent >>');
     super.ngOnInit();
     this.setTitle('Dashboard');
     this.setBreadCrumb([{name: 'Dashboard', link: '/', type : 'active'}]);
