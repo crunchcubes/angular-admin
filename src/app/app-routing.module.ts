@@ -33,7 +33,7 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () => TaskModule,
   },
-  //{ path: '**', loadChildren: () => DefaultModule, }
+  //{ path: '**', loadChildren: () => NotFoundComponent, }
 ];
 
 @NgModule({

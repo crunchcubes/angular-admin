@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 
-//import { UserService } from '../../core';
 import { UserService } from './user.service';
 import { map } from 'rxjs/operators/map';
 import { take } from 'rxjs/operators/take';
@@ -28,6 +27,4 @@ export class NoAuthGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     return true;
   }
-
-
 }

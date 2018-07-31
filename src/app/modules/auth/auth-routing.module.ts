@@ -20,7 +20,7 @@ const routes: Routes = [
     canActivate: [NoAuthGuard]
   }
 ];
-console.log('::AuthRoutingModule');
+//console.log('::AuthRoutingModule');
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
