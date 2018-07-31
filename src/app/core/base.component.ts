@@ -7,18 +7,17 @@ export class BaseComponent implements OnInit {
       
   }
 
-  setTitle(title:string){
-   // DependencyResolverService.getUtilityService().setTitle(title);
+  setNavigation(title:string, items:any[]){
+    DependencyResolverService.getUtilityService().setNavigation(title, this.getBreadCrumb(items));
   }
 
   getTitle():string{
-    return 'Temp Title';
-    //return DependencyResolverService.getUtilityService().getTitle();
+    return DependencyResolverService.getUtilityService().getTitle();
   }
 
-  setBreadCrumb(items:any[]){
-    //let mergeItems = [{name: 'Home', link: '/home', type : ''}].concat(items)
-   // DependencyResolverService.getUtilityService().setBreadCrumb(mergeItems);
+  getBreadCrumb(items:any[]){
+    let mergeItems = [{name: 'Home', link: '/home', type : ''}].concat(items);
+    return mergeItems;
   }
 
   ngOnInit() {  

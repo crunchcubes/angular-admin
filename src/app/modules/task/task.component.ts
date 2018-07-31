@@ -22,8 +22,10 @@ export class TaskComponent extends BaseComponent {
   ngOnInit() {  
     console.log('TaskComponent >>');
     super.ngOnInit();
-    this.setTitle('My Tasks');
-    this.setBreadCrumb([{name: 'Task', link: '/task', type : 'active'}]);
+    this.setNavigation(
+      'My Tasks', 
+      [{name: 'Task', link: '/task', type : 'active'}]
+    );
 
     this.taskService.getAll()
       .subscribe(tasks => {

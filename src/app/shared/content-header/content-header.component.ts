@@ -12,15 +12,11 @@ export class ContentHeaderComponent implements OnInit {
   constructor() {
   }
 
-  ngOnInit() {/*
+  ngOnInit() {
     DependencyResolverService.getUtilityService().onTitleChanged.subscribe(args => {
-      this.title = args.value;
+      this.title = args.value.title;
+      this.items = args.value.items; 
     });
-
-    DependencyResolverService.getUtilityService().onNavigationChange.subscribe(args => {
-      console.log(args);
-      this.items = args.value; 
-    });*/
   }
 
 }
