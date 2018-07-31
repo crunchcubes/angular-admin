@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-import { AuthComponent } from './modules/auth/auth.component';
-import { DashboardComponent } from "./modules/dashboard/dashboard.component";
-import { TaskComponent } from './modules/task/task.component';
-import { TaskNewComponent } from './modules/task/task-new/task-new.component';
-import { DefaultComponent } from './modules/default/default.component';
-
 import { DefaultModule } from './modules/default/default.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
+import { NotFoundModule } from './modules/not-found/not-found.module';
 
 const routes: Routes = [
   {
@@ -33,14 +28,12 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () => TaskModule,
   },
-  //{ path: '**', loadChildren: () => NotFoundComponent, }
+  { path: '**', loadChildren: () => NotFoundModule, }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    // preload all modules; optionally we could
-    // implement a custom preloading strategy for just some
-    // of the modules
+    // preload all modules;
     preloadingStrategy: PreloadAllModules
   })],
   exports: [RouterModule]
