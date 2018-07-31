@@ -13,27 +13,18 @@ import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 const routes: Routes = [
-   /*{
-    path: '',
-    loadChildren: () => AuthModule
-  },*/
   {
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'default',
-  },
-  {
-    path: 'default',
     loadChildren: () => DefaultModule,
   },
   {
     path: 'dashboard',
     loadChildren: () => DashboardModule
   },
-  /*{
+  {
     path: 'auth',
     loadChildren: () => AuthModule,
-  },*/
+  },
   {
     path: 'dashboard',
     loadChildren: () => DashboardModule
@@ -42,29 +33,7 @@ const routes: Routes = [
     path: 'task',
     loadChildren: () => TaskModule,
   },
-
-  { path: '**', loadChildren: () => DefaultModule, }
-  /*{ 
-    path: 'auth',
-    component: AuthComponent
-  },
-  {
-    path: 'task',
-    component: TaskComponent,
-    //loadChildren: './modules/task/task.module#TaskModule'
-  },
-  {
-    path: 'home',
-    component: DashboardComponent
-  },
-  { 
-    path: "task/task-new", 
-    component: TaskNewComponent 
-  },*/
-  /*{
-    path: 'dashboardx',
-    loadChildren: './modules/task/task.module#TaskModule'
-  }*/
+  //{ path: '**', loadChildren: () => DefaultModule, }
 ];
 
 @NgModule({

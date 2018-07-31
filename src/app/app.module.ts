@@ -42,9 +42,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     FormsModule,
     CoreModule,
     SharedModule,
-    AuthModule,
-    TaskModule,
-    DashboardModule,
+    //AuthModule,
+    //TaskModule,
+    //DashboardModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
