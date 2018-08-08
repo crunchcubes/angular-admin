@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TaskComponent } from './task.component';
 import { TaskNewComponent } from './task-new/task-new.component';
-import { TaskAuthResolver } from './task-auth-resolver.service';
+import { TaskEditComponent } from './task-edit/task-edit.component';
 //import { NoAuthGuard } from './no-auth-guard.service';
 import { AuthGuard } from '../../core';
 
@@ -22,8 +22,12 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'task-new',
+    path: 'add',
     component: TaskNewComponent
+  },
+  {
+    path: ':id',
+    component: TaskEditComponent
   }
 ];
 
