@@ -13,9 +13,14 @@ export class ContentHeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.title = '';
+    this.items = []; 
+
+    console.log('ContentHeaderComponent>>> ');
     DependencyResolverService.getUtilityService().onTitleChanged.subscribe(args => {
       this.title = args.value.title;
       this.items = args.value.items; 
+      console.log('In### ContentHeaderComponent>>> ');
     });
   }
 

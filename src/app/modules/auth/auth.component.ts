@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Errors, UserService } from '../../core';
+import { Errors, UserService, DependencyResolverService } from '../../core';
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.component.html'
@@ -33,6 +33,7 @@ export class AuthComponent implements OnInit {
       this.router.navigate(['/dashboard']);
       return;
     }*/
+    DependencyResolverService.getUtilityService().setNavigation('', []);
     console.log('AuthComponent >>');
     this.route.url.subscribe(data => {
       this.checkAction(data[data.length - 1].path);
