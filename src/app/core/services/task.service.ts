@@ -17,6 +17,12 @@ export class TaskService {
       .pipe(map((data: {tasks: [Task]}) => data.tasks));
   }
 
+  get(taskId): Observable<Task> {
+    console.log('>>>>>>* ' + `/task/${taskId}`);
+    return this.apiService.get(`/task/${taskId}`)
+      .pipe(map((data: {task: Task}) => data.task));
+  }
+
   add(payload): Observable<Task> {
     return this.apiService
     .post(

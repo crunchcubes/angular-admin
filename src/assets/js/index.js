@@ -15,4 +15,5 @@ $(function () {
     checkboxClass: 'icheckbox_flat-green',
     radioClass   : 'iradio_flat-green'
   })
+  console.log('<<<<<<<<<<< input[type="checkbox"].minimal');
 })

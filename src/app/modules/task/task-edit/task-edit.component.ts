@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 import {ProjectService, TaskService } from '../../../core';
 
 import {
-  Project
+  Task
 } from '../../../core';
 
 import {BaseComponent} from '../../../core/base.component';
@@ -18,9 +18,11 @@ import { initializeFormElements } from '../../../../assets/external-js/functions
 
 export class TaskEditComponent extends BaseComponent {
   private taskNameControl: FormControl;
-  private projects: [Project];
+  task: Task = {} as Task;
 
   newTask:any;
+
+  title:string;
   constructor
   (
     private projectService: ProjectService,
@@ -41,27 +43,16 @@ export class TaskEditComponent extends BaseComponent {
         {name: 'Edit Task', link: '/task-new', type : 'active'}
       ]
     );
-   
-    this.projectService.getAll()
-      .subscribe(projects => {
-        this.projects = projects;
-        initializeFormElements();
-      });
+    //this.task.taskName = 'Sample Task';
+    console.log('XXXXXXXXXX');
+    this.taskService.get(1)
+    .subscribe(task => {
+      
+      console.log(task);
+    });
   }
 
   updateTask() {
-    const taskName = this.taskNameControl.value;
-    this.newTask = {
-      projectId:0,
-      taskName:"New Task",
-      taskDescription:"Task Description"
-    };
-    this.taskService.add(this.newTask)
-    .subscribe(response => {
-      console.log(response);
-      if(response){
-        this.router.navigate(['task']);
-      }
-    });
+   
   }
 }
