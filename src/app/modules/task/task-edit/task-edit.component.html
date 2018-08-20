@@ -11,18 +11,18 @@
                     <!-- text input -->
                     <div class="form-group">
                       <label>Task Name</label>
-                      <input type="text" class="form-control" placeholder="Enter ..." [formControl]="taskNameControl">
+                      <input type="text" class="form-control" placeholder="Task Name ..." [(ngModel)]= "task.taskName" [ngModelOptions]="{standalone: true}">
                     </div>
                     <!-- textarea -->
                     <div class="form-group">
                       <label>Task Description</label>
-                      <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+                      <textarea class="form-control" rows="3" placeholder="Task Description ..." [(ngModel)]= "task.taskDescription" [ngModelOptions]="{standalone: true}"></textarea>
                     </div>
                     <!-- select -->
                     <div class="form-group">
                       <label>Project</label>
                       <select class="form-control select2" style="width: 100%;">
-                          <option *ngFor="let project of projects">{{project.projectName}}</option>
+                          <option *ngFor="let project of projects" [selected]="project.projectId === task.projectId" [value]="project.projectId">{{project.projectName}}</option>
                         </select>
                     </div>
                   </form>
