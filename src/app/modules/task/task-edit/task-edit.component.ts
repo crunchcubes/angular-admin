@@ -48,18 +48,27 @@ export class TaskEditComponent extends BaseComponent {
     this.projectService.getAll()
     .subscribe(projects => {
       this.projects = projects;
-      console.log(this.projects);
-      initializeFormElements();
+      //initializeFormElements();
     });
     
     this.taskService.get(1)
     .subscribe(task => { 
       this.task = task;
-      console.log(this.task);
     });
   }
 
   updateTask() {
-   
+    const taskName = this.taskNameControl.value;
+    this.newTask = {
+      projectId:0,
+      taskName:"New Task",
+      taskDescription:"Task Description"
+    };
+    this.taskService.update(this.newTask)
+    .subscribe(response => {
+      if(response){
+        this.router.navigate(['task']);
+      }
+    });
   }
 }

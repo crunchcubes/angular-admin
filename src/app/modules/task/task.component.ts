@@ -20,7 +20,6 @@ export class TaskComponent extends BaseComponent {
   constructor(private taskService: TaskService) {super()}
 
   ngOnInit() {  
-    console.log('TaskComponent >>');
     super.ngOnInit();
     this.setNavigation(
       'My Tasks', 

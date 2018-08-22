@@ -34,7 +34,6 @@ export class AuthComponent implements OnInit {
       return;
     }*/
     DependencyResolverService.getUtilityService().setNavigation('', []);
-    console.log('AuthComponent >>');
     this.route.url.subscribe(data => {
       this.checkAction(data[data.length - 1].path);
       // Get the last piece of the URL (it's either 'login' or 'register')

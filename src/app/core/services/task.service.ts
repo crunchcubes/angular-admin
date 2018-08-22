@@ -13,12 +13,11 @@ export class TaskService {
   ) {}
 
   getAll(): Observable<[Task]> {
-    return this.apiService.get('/task/get-tasks')
+    return this.apiService.get('/task/get-all')
       .pipe(map((data: {tasks: [Task]}) => data.tasks));
   }
 
   get(taskId): Observable<Task> {
-    console.log('>>>>>>* ' + `/task/${taskId}`);
     return this.apiService.get(`/task/${taskId}`)
       .pipe(map((data: {task: Task}) => data.task));
   }
@@ -26,7 +25,15 @@ export class TaskService {
   add(payload): Observable<Task> {
     return this.apiService
     .post(
-      '/task/create-task',
+      '/task/add',
+      { task: { body: payload } }
+    ).pipe(map(response => response));
+  }
+
+  update(payload): Observable<Task> {
+    return this.apiService
+    .post(
+      '/task/update',
       { task: { body: payload } }
     ).pipe(map(response => response));
   }
