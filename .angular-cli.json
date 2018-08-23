@@ -28,6 +28,7 @@
         "assets/js/plugins/fastclick/fastclick.js",
         "assets/js/plugins/select2/select2.full.min.js",
         "assets/js/plugins/iCheck/icheck.min.js",
+        "assets/js/momentjs/moment.min.js",
 
         "assets/js/demo.js",
         "assets/js/adminlte.js",
