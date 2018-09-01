@@ -21,7 +21,7 @@ export class TaskEditComponent extends BaseComponent {
   private projects: [Project];
   task: Task = {} as Task;
 
-  newTask:any;
+  //newTask:any;
 
   title:string;
   constructor
@@ -57,18 +57,23 @@ export class TaskEditComponent extends BaseComponent {
     });
   }
 
-  updateTask() {
-    const taskName = this.taskNameControl.value;
-    this.newTask = {
-      projectId:0,
-      taskName:"New Task",
-      taskDescription:"Task Description"
+  private updateTask() {
+    //[::KEEP::]// const taskName = this.taskNameControl.value; 
+
+    var newTask:any = {
+      taskId: null,
+      projectId: this.task.projectId,
+      taskName: this.task.taskName,
+      taskDescription: this.task.taskDescription
     };
-    this.taskService.update(this.newTask)
+
+    this.taskService.update(newTask)
     .subscribe(response => {
       if(response){
         this.router.navigate(['task']);
       }
     });
+
+    console.log(newTask);
   }
 }

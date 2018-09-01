@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BaseComponent} from '../../core/base.component';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html'

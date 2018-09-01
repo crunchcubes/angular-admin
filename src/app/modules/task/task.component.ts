@@ -9,6 +9,8 @@ import {
   Task
 } from '../../core';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -17,7 +19,7 @@ import {
 export class TaskComponent extends BaseComponent {
   tasks: [Task];
 
-  constructor(private taskService: TaskService) {super()}
+  constructor(private taskService: TaskService, private router: Router) {super()}
 
   ngOnInit() {  
     super.ngOnInit();
@@ -32,5 +34,11 @@ export class TaskComponent extends BaseComponent {
         this.loaded = true;
         console.log(tasks)
       });
+  }
+
+  selectTask(taskId:string){
+    this.router.navigate(['/task/edit1/', { externalUrl: '' }], {
+      skipLocationChange: true,
+  });
   }
 }

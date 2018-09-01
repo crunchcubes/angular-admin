@@ -31,7 +31,7 @@
               <div class="table-responsive mailbox-messages">
                 <table class="table table-hover table-striped">
                   <tbody>
-                  <tr *ngFor="let task of tasks">
+                  <tr *ngFor="let task of tasks" (click)="selectTask(task.taskId)">
                     <td class="mailbox-name"></td>
                     <td class="mailbox-subject"><b>{{task.taskName}}</b> - {{task.taskDescription}}
                     </td>
@@ -76,8 +76,6 @@
             <p>ASP.NET Web API is a framework that makes it easy to build HTTP services that reach a 
               broad range of clients, including browsers and mobile devices. ASP.NET Web API is an ideal 
               platform for building RESTful applications on the .NET Framework</p>
-
-            <p>Thanks,<br>Jane</p>
           </div>
           <!-- /.mailbox-read-message -->
         </div>

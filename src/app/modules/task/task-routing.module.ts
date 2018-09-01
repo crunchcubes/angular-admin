@@ -26,11 +26,10 @@ const routes: Routes = [
     component: TaskNewComponent
   },
   {
-    path: ':id',
+    path: 'edit/:id',
     component: TaskEditComponent
   }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
