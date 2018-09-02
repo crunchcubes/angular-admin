@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import {Router} from "@angular/router";
+import {Router, ActivatedRoute} from "@angular/router";
 
 import {ProjectService, TaskService } from '../../../core';
 
@@ -29,6 +29,7 @@ export class TaskEditComponent extends BaseComponent {
     private projectService: ProjectService,
     private taskService: TaskService,
     private router: Router,
+    private route: ActivatedRoute
   ) 
   { 
     super();
@@ -37,6 +38,8 @@ export class TaskEditComponent extends BaseComponent {
 
   ngOnInit() {
     super.ngOnInit();
+
+    var taskId: string = '';
     this.setNavigation(
       'Edit Task',
       [
@@ -51,10 +54,14 @@ export class TaskEditComponent extends BaseComponent {
       //initializeFormElements();
     });
     
-    this.taskService.get(1)
-    .subscribe(task => { 
-      this.task = task;
-    });
+    this.route.paramMap.subscribe(params => {
+      let id = params.get('id') 
+      console.log(id);
+      this.taskService.get(id)
+      .subscribe(task => { 
+        this.task = task;
+      });
+    })
   }
 
   private updateTask() {

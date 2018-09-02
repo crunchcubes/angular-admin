@@ -37,8 +37,8 @@ export class TaskComponent extends BaseComponent {
   }
 
   selectTask(taskId:string){
-    this.router.navigate(['/task/edit1/', { externalUrl: '' }], {
-      skipLocationChange: true,
+    this.router.navigate([`/task/edit/${taskId}`, {}], {
+      skipLocationChange: false
   });
   }
 }
