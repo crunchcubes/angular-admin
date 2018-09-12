@@ -100,4 +100,10 @@ export class UserService {
     this. purgeAuth();
     console.log("Out Auth Token >> " + this.jwtService.getToken());
   }
+
+
+  getUsers(): Observable<[User]> {
+    return this.apiService.get('/user/get-users')
+      .pipe(map((data: {users: [User]}) => data.users));
+  }
 }

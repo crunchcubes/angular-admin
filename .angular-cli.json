@@ -30,6 +30,9 @@
         "assets/js/plugins/iCheck/icheck.min.js",
         "assets/js/momentjs/moment.min.js",
 
+        "assets/js/plugins/datatables/jquery.dataTables.js",
+        "assets/js/plugins/datatables/dataTables.bootstrap4.js",
+
         "assets/js/demo.js",
         "assets/js/adminlte.js",
         "assets/js/index.js"

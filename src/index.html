@@ -35,6 +35,16 @@
 </div>
 </body>
 <script>
- 
+  $(function () {
+    $('#example1').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true,
+      "pageLength": 3
+    });
+  });
 </script>
 </html>

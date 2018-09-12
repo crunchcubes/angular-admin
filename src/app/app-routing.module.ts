@@ -6,6 +6,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { TaskModule } from './modules/task/task.module';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { NotFoundModule } from './modules/not-found/not-found.module';
+import { UserModule } from './modules/user/user.module';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'task',
     loadChildren: () => TaskModule,
+  },
+  {
+    path: 'user',
+    loadChildren: () => UserModule,
   },
   { path: '**', loadChildren: () => NotFoundModule, }
 ];

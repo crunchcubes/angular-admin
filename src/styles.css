@@ -3,4 +3,5 @@
 @import 'assets/js/plugins/select2/select2.min.css';
 @import 'assets/css/adminlte.css';
 @import 'assets/js/plugins/fullcalendar/fullcalendar.min.css';
+@import 'assets/js/plugins/datatables/dataTables.bootstrap4.css';
 @import 'assets/js/plugins/iCheck/flat/_all.css'
