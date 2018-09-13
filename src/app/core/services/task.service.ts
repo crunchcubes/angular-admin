@@ -25,7 +25,7 @@ export class TaskService {
   add(payload): Observable<Task> {
     return this.apiService
     .post(
-      '/task/add',
+      '/task/create',
       { task: { body: payload } }
     ).pipe(map(response => response));
   }
