@@ -7,7 +7,6 @@ import {UserService, ProjectService} from '../../core';
 
 import { DataTable, DataTableResource } from 'angular5-data-table';
 import { DataTableResourceCustom } from './data-table-resources-custom';
-import data from './data-table-data';
 
 import {
   User,
@@ -19,12 +18,11 @@ import {
   templateUrl: './user.component.html'
 })
 export class UserComponent extends BaseComponent {
-  private users: [User];
-  private projects: [Project];
-  private items:any = [];
+  private users:any = [];
   private itemCount = 0;
-
-  itemResource = new DataTableResourceCustom(data);
+  private limit = 0;
+  private itemResource:any;
+ 
    
     
   constructor
@@ -33,26 +31,25 @@ export class UserComponent extends BaseComponent {
     private projectService: ProjectService,
     private router: Router
   ) 
-     {super(); this.itemResource.count().then(count => this.itemCount = count);}
+     {super();}
 
   ngOnInit() {
-
-    this.projectService.getAll()
-    .subscribe(projects => {
-      this.projects = projects;
-      //initializeFormElements();
-    });
-
+   // this.itemResource.count().then(count => this.itemCount = count);
 
     this.userService.getUsers()
     .subscribe(users => {
       this.users = users;
       this.loaded = true;
       console.log(this.users);
+
+      this.itemResource = new DataTableResourceCustom(this.users);
+      this.itemResource.count().then(count => {this.itemCount = count, this.limit = 10});
     });
   }
 
   reloadItems(params) {
-    this.itemResource.query(params).then(items => this.items = items);
+    if(this.itemResource != null){
+      this.itemResource.query(params).then(items => this.users = items);
+    }
   }
 }

@@ -1,9 +1,8 @@
+<!--
 <div class="card">
     <div class="card-header">
         <h3 class="card-title">Users</h3>
     </div>
-    
-    <!-- /.card-header -->
     <div class="card-body">
         <table id="example1" class="table table-bordered table-striped">
             <thead>
@@ -26,34 +25,42 @@
             </tfoot>
         </table>
     </div>
-    <!-- /.card-body -->
 </div>
-<!-- /.card -->
+-->
 
-
-<div>
+<div class="card">
+   
+    <div class="card-body">
     <data-table
-      [title]="'Employees'"
-      [items]="items"
+      [title]="'Users'"
+      [items]="users"
       [itemCount]="itemCount"
       [showReloading]="true"
+      [pagination]="true"
+      [indexColumn]="false"
+      [selectColumn]="false"
+      [page]="1"
+      [limit]="limit"
       (reload)="reloadItems($event)">
       <data-table-column
-        [property]="'name'"
-        [header]="'Name'"
+        [property]="'first_name'"
+        [header]="'First Name'"
         [sortable]="true">
       </data-table-column>
       <data-table-column
-        property="phoneNumber"
-        header="Phone number">
+        property="last_name"
+        header="Last Name"
+        [sortable]="true">
+      </data-table-column>
+      <data-table-column
+        property="gender"
+        header="gender">
+      </data-table-column>
+      <data-table-column
+        property="email"
+        header="Email"
+        [sortable]="true">
       </data-table-column>
     </data-table>
   </div>
-  <br>
-  <br>
-  <p class="h6">Notes for testers and developers</p>
-  <ul>
-    <li>
-      In this sample, we test the loading spinner when the component is processing data. In order to fake it, we delay the <code>reloadItems()</code> function by a random time (0 to 5000 milliseconds).
-    </li>
-  </ul>
+</div>
