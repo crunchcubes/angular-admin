@@ -5,6 +5,7 @@ export * from './jwt.service';
 export * from './task.service';
 export * from './project.service';
 export * from './user.service';
+export * from './team.service';
 export * from './script.service';
 export * from './utility.service';
 export * from './dependency-resolver.service';

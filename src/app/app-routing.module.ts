@@ -8,6 +8,7 @@ import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { NotFoundModule } from './modules/not-found/not-found.module';
 import { UserModule } from './modules/user/user.module';
 import { ProjectModule } from './modules/project/project.module';
+import { TeamModule } from './modules/team/team.module';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'project',
     loadChildren: () => ProjectModule,
+  },
+  {
+    path: 'team',
+    loadChildren: () => TeamModule,
   },
   { path: '**', loadChildren: () => NotFoundModule, }
 ];
