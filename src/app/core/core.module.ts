@@ -9,6 +9,7 @@ import {
   NoAuthGuard,
   JwtService,
   TaskService,
+  TeamService,
   ProjectService,
   UserService,
   ScriptService
@@ -25,6 +26,7 @@ import {
     NoAuthGuard,
     JwtService,
     TaskService,
+    TeamService,
     ProjectService,
     UserService,
     ScriptService
