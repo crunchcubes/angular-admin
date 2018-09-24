@@ -32,7 +32,9 @@ export class TeamComponent extends BaseComponent {
   ) {super()}
 
   open(content) {
-    this.modal = this.modalService.open(content, {}).result.then((result) => {
+    this.modal = this.modalService.open(content, {});
+    
+    this.modal.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -51,6 +53,7 @@ export class TeamComponent extends BaseComponent {
 
   close(){
     this.modal.close();
+    console.log(this.modal);
   }
 
   ngOnInit() {
