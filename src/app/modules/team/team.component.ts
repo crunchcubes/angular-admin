@@ -11,7 +11,7 @@ import {
   Team
 } from '../../core';
 
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-default',
@@ -21,7 +21,7 @@ export class TeamComponent extends BaseComponent {
   private teams: [Team];
 
   private closeResult: string
-  modal: any;
+  private modal: NgbModalRef;
     
   constructor
   (
@@ -51,9 +51,12 @@ export class TeamComponent extends BaseComponent {
     }
   }
 
-  close(){
+  protected close(content):void{
     this.modal.close();
-    console.log(this.modal);
+  }
+
+  protected dismiss(content):void{
+    this.modal.dismiss();
   }
 
   ngOnInit() {
@@ -63,3 +66,7 @@ export class TeamComponent extends BaseComponent {
     );
   }
 }
+
+
+//https://ng-bootstrap.github.io/#/components/modal/examples
+//https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
