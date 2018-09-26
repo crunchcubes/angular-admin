@@ -6,12 +6,26 @@ import {BaseComponent} from '../../core/base.component';
 import {UserService, TeamService} from '../../core';
 
 import { DataTable, DataTableResource } from 'angular5-data-table';
-
+import { Input } from '@angular/core';
 import {
   Team
 } from '../../core';
 
-import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbActiveModal, NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+
+
+
+
+
+@Component({
+  selector: 'ngbd-modal-content',
+  templateUrl: './modal.component.html'
+})
+export class NgbdModalContent {
+  @Input() name;
+  constructor(public activeModal: NgbActiveModal) {}
+}
+
 
 @Component({
   selector: 'app-default',
@@ -32,13 +46,16 @@ export class TeamComponent extends BaseComponent {
   ) {super()}
 
   open(content) {
-    this.modal = this.modalService.open(content, {});
+    /*this.modal = this.modalService.open(content, {});
     
     this.modal.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });
+    });*/
+
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.name = 'World';
   }
 
   private getDismissReason(reason: any): string {

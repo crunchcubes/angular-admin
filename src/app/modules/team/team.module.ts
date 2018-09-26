@@ -8,6 +8,7 @@ import { TeamRoutingModule } from './team-routing.module';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbdModalContent } from  './team.component';
 
 @NgModule({
   imports: [
@@ -17,10 +18,12 @@ import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bo
     NgbModule.forRoot()
   ],
   declarations: [
-    TeamComponent
+    TeamComponent,
+    NgbdModalContent,
   ],
   providers: [
     NgbActiveModal
-  ]
+  ],
+  entryComponents: [NgbdModalContent]
 })
 export class TeamModule {}
