@@ -11,24 +11,12 @@ import {
   Team
 } from '../../core';
 
-import {NgbActiveModal, NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-
-
-
-
-
-@Component({
-  selector: 'ngbd-modal-content',
-  templateUrl: './modal.component.html'
-})
-export class NgbdModalContent {
-  @Input() name;
-  constructor(public activeModal: NgbActiveModal) {}
-}
+import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbdModalContent } from  './modal-content.component';
 
 
 @Component({
-  selector: 'app-default',
+  selector: 'app-team',
   templateUrl: './team.component.html'
 })
 export class TeamComponent extends BaseComponent {
@@ -46,19 +34,11 @@ export class TeamComponent extends BaseComponent {
   ) {super()}
 
   open(content) {
-    /*this.modal = this.modalService.open(content, {});
-    
-    this.modal.result.then((result) => {
-      this.closeResult = `Closed with: ${result}`;
-    }, (reason) => {
-      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-    });*/
-
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.name = 'World';
   }
 
-  private getDismissReason(reason: any): string {
+  protected getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -87,3 +67,4 @@ export class TeamComponent extends BaseComponent {
 
 //https://ng-bootstrap.github.io/#/components/modal/examples
 //https://blog.angular-university.io/angular-ng-template-ng-container-ngtemplateoutlet/
+//https://stackblitz.com/angular/xxlxmbednyv?file=app%2Fmodal-component.ts

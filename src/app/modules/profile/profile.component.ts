@@ -12,7 +12,7 @@ import {
 } from '../../core';
 
 @Component({
-  selector: 'app-default',
+  selector: 'app-profile',
   templateUrl: './profile.component.html'
 })
 export class ProfileComponent extends BaseComponent {

@@ -13,7 +13,7 @@ import {
 } from '../../core';
 
 @Component({
-  selector: 'app-default',
+  selector: 'app-project',
   templateUrl: './project.component.html'
 })
 export class ProjectComponent extends BaseComponent {
