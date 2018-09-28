@@ -21,9 +21,8 @@ import {NgbdModalContent } from  './modal-content.component';
 })
 export class TeamComponent extends BaseComponent {
   private teams: [Team];
-
-  private closeResult: string
-  private modal: NgbModalRef;
+  private closeResult:string;
+  private modalRef: NgbModalRef;
     
   constructor
   (
@@ -34,11 +33,19 @@ export class TeamComponent extends BaseComponent {
   ) {super()}
 
   open(content) {
-    const modalRef = this.modalService.open(NgbdModalContent);
-    modalRef.componentInstance.name = 'World';
+    this.modalRef = this.modalService.open(NgbdModalContent);
+    this.modalRef.componentInstance.name = 'World';
+
+
+    this.modalRef.result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
   }
 
-  protected getDismissReason(reason: any): string {
+  private getDismissReason(reason: any): string {
+    console.log('>>>> getDismissReason');
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -46,14 +53,6 @@ export class TeamComponent extends BaseComponent {
     } else {
       return  `with: ${reason}`;
     }
-  }
-
-  protected close(content):void{
-    this.modal.close();
-  }
-
-  protected dismiss(content):void{
-    this.modal.dismiss();
   }
 
   ngOnInit() {
