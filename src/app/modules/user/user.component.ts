@@ -5,8 +5,8 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {BaseComponent} from '../../core/base.component';
 import {UserService, ProjectService} from '../../core';
 
-import { DataTable, DataTableResource } from 'angular5-data-table';
-import { DataTableResourceCustom } from './data-table-resources-custom';
+//import { DataTable, DataTableResource } from 'angular6-data-table';
+//import { DataTableResourceCustom } from './data-table-resources-custom';
 
 import {
   User,
@@ -42,7 +42,7 @@ export class UserComponent extends BaseComponent {
       this.loaded = true;
       console.log(this.users);
 
-      this.itemResource = new DataTableResourceCustom(this.users);
+      //this.itemResource = new DataTableResourceCustom(this.users);
       this.itemResource.count().then(count => {this.itemCount = count, this.limit = 10});
     });
   }

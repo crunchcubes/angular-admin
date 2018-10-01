@@ -2,11 +2,9 @@
 
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 
 import { UserService } from './user.service';
-import { map } from 'rxjs/operators/map';
-import { take } from 'rxjs/operators/take';
 
 @Injectable()
 export class NoAuthGuard implements CanActivate {

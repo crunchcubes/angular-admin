@@ -7,14 +7,14 @@ import { UserAuthResolver } from './user-auth-resolver.service';
 import { SharedModule } from '../../shared';
 import { UserRoutingModule } from './user-routing.module';
 
-import { DataTableModule } from 'angular5-data-table';
+import { DataTableModule } from 'angular-6-datatable';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     UserRoutingModule,
-    DataTableModule.forRoot()
+    //DataTableModule.forRoot()
   ],
   declarations: [
     UserComponent

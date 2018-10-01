@@ -5,7 +5,7 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import {BaseComponent} from '../../core/base.component';
 import {UserService, TeamService} from '../../core';
 
-import { DataTable, DataTableResource } from 'angular5-data-table';
+//import { DataTable, DataTableResource } from 'angular6-data-table';
 import { Input } from '@angular/core';
 import {
   Team

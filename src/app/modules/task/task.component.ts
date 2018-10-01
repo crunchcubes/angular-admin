@@ -1,7 +1,7 @@
 //Reference: https://medium.com/dailyjs/3-ways-to-communicate-between-angular-components-a1e3f3304ecb
 
 import { Component} from '@angular/core';
-import 'rxjs/add/operator/map';
+//import 'rxjs/add/operator/map';
 
 import {TaskService} from '../../core';
 import {BaseComponent} from '../../core/base.component';
