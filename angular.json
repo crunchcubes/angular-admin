@@ -49,20 +49,20 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/js/plugins/jquery/jquery.min.js",
-              "assets/js/plugins/bootstrap/js/bootstrap.bundle.min.js",
-              "assets/js/plugins/slimScroll/jquery.slimscroll.min.js",
-              "assets/js/plugins/fastclick/fastclick.js",
-              "assets/js/plugins/select2/select2.full.min.js",
-              "assets/js/plugins/iCheck/icheck.min.js",
-              "assets/js/momentjs/moment.min.js",
+              "src/assets/js/plugins/jquery/jquery.min.js",
+              "src/assets/js/plugins/bootstrap/js/bootstrap.bundle.min.js",
+              "src/assets/js/plugins/slimScroll/jquery.slimscroll.min.js",
+              "src/assets/js/plugins/fastclick/fastclick.js",
+              "src/assets/js/plugins/select2/select2.full.min.js",
+              "src/assets/js/plugins/iCheck/icheck.min.js",
+              "src/assets/js/momentjs/moment.min.js",
 
-              "assets/js/plugins/datatables/jquery.dataTables.js",
-              "assets/js/plugins/datatables/dataTables.bootstrap4.js",
+              "src/assets/js/plugins/datatables/jquery.dataTables.js",
+              "src/assets/js/plugins/datatables/dataTables.bootstrap4.js",
 
-              "assets/js/demo.js",
-              "assets/js/adminlte.js",
-              "assets/js/index.js"
+              "src/assets/js/demo.js",
+              "src/assets/js/adminlte.js",
+              "src/assets/js/index.js"
 			      ]
           },
           "configurations": {
