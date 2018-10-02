@@ -1,0 +1,10 @@
+{
+	"user":
+	{
+	  "iss": "scotch.io",
+	  "exp": 1300819380,
+	  "name": "Chris Sevilleja",
+	  "admin": true,
+	  "token":"yJpc3MiOiJzY290Y2guaW8iLCJleHAiOjEzMDA4MTkzODAsIm5hbWUiOiJDaHJpcyBTZXZpbGxlamEiLCJhZG1pbiI6dHJ1ZX0"
+	}
+}

@@ -11,13 +11,14 @@ import {
   Team
 } from '../../core';
 
-import {NgbModal,NgbModalRef, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal,NgbModalRef, ModalDismissReasons, NgbModalOptions, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import {NgbdModalContent } from  './modal-content.component';
 
 
 @Component({
   selector: 'app-team',
-  templateUrl: './team.component.html'
+  templateUrl: './team.component.html',
+  providers: [NgbModalConfig, NgbModal]
 })
 export class TeamComponent extends BaseComponent {
   private teams: [Team];
@@ -29,8 +30,13 @@ export class TeamComponent extends BaseComponent {
     private userService: UserService,
     private teamService: TeamService,
     private router: Router,
-    private modalService: NgbModal
-  ) {super()}
+    private modalService: NgbModal,
+    private config: NgbModalConfig
+  ) {
+    super();
+    config.backdrop = 'static';
+    config.keyboard = false;
+  }
 
   open(content) {
     this.modalRef = this.modalService.open(NgbdModalContent);

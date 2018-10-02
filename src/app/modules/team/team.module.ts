@@ -7,7 +7,7 @@ import { SharedModule } from '../../shared';
 import { TeamRoutingModule } from './team-routing.module';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {NgbModal, ModalDismissReasons, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbActiveModal, NgbModalConfig} from '@ng-bootstrap/ng-bootstrap';
 import {NgbdModalContent } from  './modal-content.component';
 
 @NgModule({
@@ -22,7 +22,7 @@ import {NgbdModalContent } from  './modal-content.component';
     NgbdModalContent,
   ],
   providers: [
-    NgbActiveModal
+    NgbActiveModal, NgbModalConfig, NgbModal
   ],
   entryComponents: [NgbdModalContent]
 })
