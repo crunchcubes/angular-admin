@@ -9,12 +9,25 @@ import { UserRoutingModule } from './user-routing.module';
 
 import { DataTableModule } from 'angular-6-datatable';
 
+import {  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule, MatTableModule } from '@angular/material';
+
+const modules = [
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRippleModule,
+  MatTableModule
+];
+
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     UserRoutingModule,
-    //DataTableModule.forRoot()
+    modules
   ],
   declarations: [
     UserComponent
